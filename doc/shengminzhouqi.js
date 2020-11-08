@@ -1,3 +1,4 @@
+
 import React, { createRef, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -8,15 +9,10 @@ const ForwardedTextInput = React.forwardRef((props,ref)=>{
   return <input ref={ref}/>
 })
 
-// let a = React.createElement("h1", {
-//   className: "namw1"
-// }, React.createElement("span", {
-//   id: "sp"
-// }, "ssss"));
-// console.log(a)
-
 class Count extends React.Component{
-  static a = 10
+  static defaultProps = {     // 初始化默认属性对象
+      name:'zzf'            
+  }
   constructor(prop){
     super(prop)
     this.input = createRef()

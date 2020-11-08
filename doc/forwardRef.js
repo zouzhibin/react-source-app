@@ -16,13 +16,12 @@ const ForwardedTextInput = React.forwardRef((props,ref)=>{
 // console.log(a)
 
 class Count extends React.Component{
-  static a = 10
   constructor(prop){
     super(prop)
     this.input = createRef()
   }
   componentDidMount(){
-    console.log('this==',this.a)
+
   }
   handle=()=>{
     this.input.current.focus()

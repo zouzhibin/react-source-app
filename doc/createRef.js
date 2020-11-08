@@ -4,10 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const ForwardedTextInput = React.forwardRef((props,ref)=>{
-  return <input ref={ref}/>
-})
-
 // let a = React.createElement("h1", {
 //   className: "namw1"
 // }, React.createElement("span", {
@@ -16,28 +12,27 @@ const ForwardedTextInput = React.forwardRef((props,ref)=>{
 // console.log(a)
 
 class Count extends React.Component{
-  static a = 10
   constructor(prop){
     super(prop)
-    this.input = createRef()
+    this.a = createRef()
+    // console.log(createRef())
+    // console.log(<input ref={this.a }/>)
   }
   componentDidMount(){
-    console.log('this==',this.a)
+
   }
   handle=()=>{
-    this.input.current.focus()
+    this.a.current.value=100
   }
   render(){
     return(
       <div>
-        <button onClick={this.handle}>获得焦点</button>
-        <ForwardedTextInput ref={this.input}></ForwardedTextInput>
+        <button onClick={this.handle}></button>
+        <input ref={this.a }/>
       </div>
     )
   }
 }
-
-
 
 
 
